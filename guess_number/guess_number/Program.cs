@@ -10,7 +10,7 @@ namespace guess_number
     {
         static void Main()
         {
-            int min = 1, max = 10000;
+            int min = 1, max = 100000;
             Console.WriteLine("Imagine number in range {0} - {1}",min, max);
 
             while (max - min  > 1)
@@ -35,9 +35,13 @@ namespace guess_number
                 Console.WriteLine("\nYour number is {0}", (max + min) / 2);
                 Console.ReadKey();
             }
-            else Console.WriteLine("\nYour number is {0}", (max + min) / 2 + 1);
+            else Console.WriteLine("\nIs your number {0}?", (max + min) / 2 + 1);
+            if (Console.ReadKey().Key == ConsoleKey.Y)
+            {
+                Console.WriteLine("\nSUCCESS! Press any key\n");
+            }
+            else Console.WriteLine("\nNO WAY! Try again. Press any key\n");
 
-            Console.WriteLine("\nSUCCESS! Press any key\n");
             Console.ReadKey();
         }
     }
